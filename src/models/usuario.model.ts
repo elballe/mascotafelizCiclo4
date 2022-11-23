@@ -26,7 +26,7 @@ export class Usuario extends Entity {
     type: 'string',
     required: true,
   })
-  apeliido: string;
+  apellido: string;
 
   @property({
     type: 'string',
@@ -42,7 +42,7 @@ export class Usuario extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   contrasena: string;
 

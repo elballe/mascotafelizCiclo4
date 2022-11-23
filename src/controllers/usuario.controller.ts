@@ -16,7 +16,7 @@ import {Credenciales, Usuario} from '../models';
 import {UsuarioRepository} from '../repositories';
 import {AutenticacionService} from '../services';
 const fetch = require('node-fetch');
-//authenticarion("admin")
+//authentication("admin")
 export class UsuarioController {
   constructor(
     @repository(UsuarioRepository)
