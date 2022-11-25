@@ -41,6 +41,12 @@ export class Mascota extends Entity {
   })
   comentario: string;
 
+  @property({
+    type: 'string',
+    required: false,
+  })
+  estadoAfiliacion: string;
+
   @belongsTo(() => Usuario)
   usuarioId: string;
 

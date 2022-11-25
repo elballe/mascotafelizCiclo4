@@ -13,6 +13,11 @@ export class Credenciales extends Model {
     required: true,
   })
   contrasena: string;
+  @property({
+    type: 'string',
+    required: false,
+  })
+  rol: string;
 
   // Define well-known properties here
 

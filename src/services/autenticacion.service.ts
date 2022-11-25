@@ -29,9 +29,9 @@ export class AutenticacionService {
     return contrasenaCifrada
   }
 
-  IdentificarUsuario(usuario: string, contrasena: string) {
+  IdentificarUsuario(usuario: string, contrasena: string, rol: string) {
     try {
-      let p = this.usuarioRepository.findOne({where: {correo: usuario, contrasena: contrasena}});
+      let p = this.usuarioRepository.findOne({where: {correo: usuario, contrasena: contrasena, rol: rol}});
       if (p) {
         return p;
 

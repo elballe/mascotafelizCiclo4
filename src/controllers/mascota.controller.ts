@@ -1,3 +1,4 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -95,6 +96,7 @@ export class MascotaController {
     return this.mascotaRepository.updateAll(mascota, where);
   }
 
+  @authenticate.skip()
   @get('/mascotas/{id}')
   @response(200, {
     description: 'Mascota model instance',

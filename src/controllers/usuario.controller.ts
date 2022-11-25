@@ -36,13 +36,14 @@ export class UsuarioController {
   async identificarUsusario(
     @requestBody() credenciales: Credenciales
   ) {
-    let p = await this.sevicioAutentificacion.IdentificarUsuario(credenciales.usuario, credenciales.contrasena);
+    let p = await this.sevicioAutentificacion.IdentificarUsuario(credenciales.usuario, credenciales.contrasena, credenciales.rol);
     if (p) {
       let token = this.sevicioAutentificacion.GenerarTokenJWT(p);
       return {
         datos: {
           nombre: p.nombre,
           correo: p.correo,
+          rol: p.rol,
           id: p.id
         },
         tk: token

@@ -1,3 +1,4 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -95,6 +96,7 @@ export class ProductoServicioController {
     return this.productoServicioRepository.updateAll(productoServicio, where);
   }
 
+  @authenticate.skip()
   @get('/producto-servicios/{id}')
   @response(200, {
     description: 'ProductoServicio model instance',
